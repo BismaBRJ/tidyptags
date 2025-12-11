@@ -1,14 +1,23 @@
+document.getElementById("btn_hello_world")
+    .addEventListener("click", hello_world);
+
+document.getElementById("btn_cleanup")
+    .addEventListener("click", cleanup_par);
+
+function hello_world() {
+    alert("Hello, world!");
+}
+
+function cleanup_par() {
+    let source_par = document.getElementById("box_input").value;
+    let clean_par = get_clean_par(source_par);
+    document.getElementById("box_result").textContent = clean_par;
+}
+
 function get_clean_par(source_par) {
-    let no_nbsp = source_par;
-    while ( no_nbsp.indexOf("&nbsp;") != -1 ) {
-        no_nbsp = no_nbsp.replaceAll("&nbsp;", "");
-    }
-    
-    let single_br = no_nbsp;
-    while ( single_br.search(/<br>\s*<br>/) != -1 ) {
-        single_br = single_br.replace(/(\s*)<br>(\s*)<br>(\s*)/, "$1<br>$3");
-    }
-    
+    let no_nbsp = del_nbsp(source_par);
+    let single_br = dedup_br(no_nbsp);
+
     // let no_p_br = single_br.replaceAll(/<p>(\s*?)<br>(\s*?)/, "<p>$1");
     
     // let no_p_br_p = no_p_br.replaceAll();
@@ -21,8 +30,3 @@ function get_clean_par(source_par) {
     return result;
 }
 
-function cleanup_par() {
-    let source_par = document.getElementById("input_box").value;
-    let clean_par = get_clean_par(source_par);
-    document.getElementById("result_box").textContent = clean_par;
-}

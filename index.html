@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <head>
-    <title>&lt;p&gt; tag cleaner</title>
+    <title>Tidy &lt;p&gt; tags</title>
 </head>
 <body>
-    <h1>&lt;p&gt; tag cleaner</h1>
+    <h1>Tidy &lt;p&gt; tags</h1>
     <p>by Bisma Rohpanca Joyosumarto - BismaBRJ (GitHub: <a href="https://github.com/BismaBRJ/">https://github.com/BismaBRJ/</a>)</p>
     <p>December 2025</p>
     <br>
-    
+
+    <button id="btn_hello_world">Hello, world!</button>
+    <br>
+
     <p>Input source here:</p>
-    <textarea id="input_box" rows="4" cols="80"></textarea>
+    <textarea id="box_input" rows="4" cols="80"></textarea>
     <br>
     
-    <button onclick="cleanup_par()">Clean up</button>
+    <button id="btn_cleanup">Clean up</button>
     <br>
     
     <p>Result:</p>
-    <textarea id="result_box" rows="4" cols="80"></textarea>
-    
+    <textarea id="box_result" rows="4" cols="80"></textarea>
+
+    <script src="tidy.js"></script>
     <script src="main.js"></script>
 </body>
