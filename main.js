@@ -1,12 +1,5 @@
-document.getElementById("btn_hello_world")
-    .addEventListener("click", hello_world);
-
 document.getElementById("btn_cleanup")
     .addEventListener("click", cleanup_par);
-
-function hello_world() {
-    alert("Hello, world!");
-}
 
 function cleanup_par() {
     let source_par = document.getElementById("box_input").value;
