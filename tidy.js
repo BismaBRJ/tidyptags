@@ -25,12 +25,12 @@ function dedup_br(par) {
 function del_br_near_p(par) {
     let new_par = par;
     new_par = new_par.replaceAll(
-        /<p>(\s*?)<br>(\s*?)/,
+        /<p>(\s*)<br>(\s*)/g,
         "<p>$1"
     );
     new_par = new_par.replaceAll(
-        /(\s*?)<br>(\s*?)</p>/,
-        "</p>"
+        /(\s*)<br>(\s*)<\/p>/g,
+        "$2</p>"
     );
     return new_par;
 }
@@ -56,3 +56,16 @@ function br_to_close_p(par) {
     return new_par;
 }
 
+// delete any spaces preceding <p> or </p> tags
+function del_spaces_before_p(par) {
+    let new_par = par;
+    new_par = new_par.replaceAll(
+        /[ \t\r\f\v]+<p>/g,
+        "<p>"
+    );
+    new_par = new_par.replaceAll(
+        /[ \t\r\f\v]+<\/p>/g,
+        "</p>"
+    );
+    return new_par;
+}

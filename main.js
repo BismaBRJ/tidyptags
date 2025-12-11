@@ -14,8 +14,9 @@ function get_clean_par(source_par) {
     let no_br_near_p = del_br_near_p(single_br);
     let plain_p = simplify_p(no_br_near_p);
     let all_p = br_to_close_p(plain_p);
-    
-    let result = all_p;
+    let left_p = del_spaces_before_p(all_p);
+        
+    let result = left_p;
     return result;
 }
 
