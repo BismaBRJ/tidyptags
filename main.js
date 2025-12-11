@@ -18,7 +18,27 @@ document.getElementById("btn_cleanup")
 function cleanup_par() {
     const source_par = document.getElementById("box_input").value;
     const clean_par = get_clean_par(source_par);
-    document.getElementById("box_result").textContent = clean_par;
+    if (debug_mode && clean_par === "") { print("Result box empty"); }
+    document.getElementById("box_result").value = clean_par;
+}
+
+document.getElementById("btn_clear_result")
+    .addEventListener("click", clear_result);
+
+document.getElementById("btn_clear_all")
+    .addEventListener("click", clear_all);
+
+function clear_input() {
+    document.getElementById("box_input").value = "";
+}
+
+function clear_result() {
+    document.getElementById("box_result").value = "";
+}
+
+function clear_all() {
+    clear_input();
+    clear_result();
 }
 
 // using functions defined in tidy.js
