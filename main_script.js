@@ -1,3 +1,7 @@
+// code for the checkboxes
+
+document.getElementById("chk_debug")
+    .checked = mode_debug;
 document.getElementById("chk_debug")
     .addEventListener(
         "change",
@@ -10,23 +14,29 @@ function set_debug(event) {
 }
 
 document.getElementById("chk_del_nbsp")
+    .checked = mode_del_nbsp;
+document.getElementById("chk_del_nbsp")
     .addEventListener(
         "change",
         (event) => {
             mode_del_nbsp = 
                 event.target.checked;
         }
-    )
+    );
 
 document.getElementById("chk_dedup_br")
+    .checked = mode_dedup_br;
+document.getElementById("chk_dedup_br") 
     .addEventListener(
         "change",
         (event) => {
             mode_dedup_br =
                 event.target.checked;
         }
-    )
+    );
 
+document.getElementById("chk_del_br_near_p")
+    .checked = mode_del_br_near_p;
 document.getElementById("chk_del_br_near_p")
     .addEventListener(
         "change",
@@ -34,8 +44,10 @@ document.getElementById("chk_del_br_near_p")
             mode_del_br_near_p =
                 event.target.checked;
         }
-    )
+    );
 
+document.getElementById("chk_simplify_p")
+    .checked = mode_simplify_p; 
 document.getElementById("chk_simplify_p")
     .addEventListener(
         "change",
@@ -43,8 +55,10 @@ document.getElementById("chk_simplify_p")
             mode_simplify_p =
                 event.target.checked;
         }
-    )
+    );
 
+document.getElementById("chk_br_to_close_p")
+    .checked = mode_br_to_close_p; 
 document.getElementById("chk_br_to_close_p")
     .addEventListener(
         "change",
@@ -52,8 +66,10 @@ document.getElementById("chk_br_to_close_p")
             mode_br_to_close_p =
                 event.target.checked;
         }
-    )
+    );
 
+document.getElementById("chk_del_spaces_before_p")
+    .checked = mode_del_spaces_before_p; 
 document.getElementById("chk_del_spaces_before_p")
     .addEventListener(
         "change",
@@ -61,7 +77,9 @@ document.getElementById("chk_del_spaces_before_p")
             mode_del_spaces_before_p =
                 event.target.checked;
         }
-    )
+    );
+
+// code for the buttons
 
 document.getElementById("btn_cleanup")
     .addEventListener("click", cleanup_par);
