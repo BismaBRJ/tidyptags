@@ -1,6 +1,3 @@
-let debug_mode = false;
-const print = alert;
-
 document.getElementById("chk_debug")
     .addEventListener(
         "change",
