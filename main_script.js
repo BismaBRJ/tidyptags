@@ -9,6 +9,60 @@ function set_debug(event) {
     mode_debug = mode;
 }
 
+document.getElementById("chk_del_nbsp")
+    .addEventListener(
+        "change",
+        (event) => {
+            mode_del_nbsp = 
+                event.target.checked;
+        }
+    )
+
+document.getElementById("chk_dedup_br")
+    .addEventListener(
+        "change",
+        (event) => {
+            mode_dedup_br =
+                event.target.checked;
+        }
+    )
+
+document.getElementById("chk_del_br_near_p")
+    .addEventListener(
+        "change",
+        (event) => {
+            mode_del_br_near_p =
+                event.target.checked;
+        }
+    )
+
+document.getElementById("chk_simplify_p")
+    .addEventListener(
+        "change",
+        (event) => {
+            mode_simplify_p =
+                event.target.checked;
+        }
+    )
+
+document.getElementById("chk_br_to_close_p")
+    .addEventListener(
+        "change",
+        (event) => {
+            mode_br_to_close_p =
+                event.target.checked;
+        }
+    )
+
+document.getElementById("chk_del_spaces_before_p")
+    .addEventListener(
+        "change",
+        (event) => {
+            mode_del_spaces_before_p =
+                event.target.checked;
+        }
+    )
+
 document.getElementById("btn_cleanup")
     .addEventListener("click", cleanup_par);
 
