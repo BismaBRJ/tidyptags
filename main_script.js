@@ -113,44 +113,52 @@ function clear_all() {
 // using functions defined in tidy_funcs.js
 // also taking into account settings.js
 function get_clean_par(source_par) {
+    let cur_par = source_par;
+    
     if (mode_del_nbsp) {
         if (mode_debug) { print("Removing nbsp"); }
-        const no_nbsp = del_nbsp(source_par);
+        const no_nbsp = del_nbsp(cur_par);
         if (mode_debug && no_nbsp === "") { print("Empty result"); }
+        cur_par = no_nbsp;
     }
 
     if (mode_dedup_br) {
         if (mode_debug) { print("Deduplicating <br> tags"); }
-        const single_br = dedup_br(no_nbsp);
+        const single_br = dedup_br(cur_par);
         if (mode_debug && single_br === "") { print("Empty result"); }
+        cur_par = single_br;
     }
 
     if (mode_del_br_near_p) {
         if (mode_debug) { print("Deleting <br> tags near <p> tags"); }
-        const no_br_near_p = del_br_near_p(single_br);
+        const no_br_near_p = del_br_near_p(cur_par);
         if (mode_debug && no_br_near_p === "") { print("Empty result"); }
+        cur_par = no_br_near_p;
     }
 
     if (mode_simplify_p) {
         if (mode_debug) { print("Removing <p> tag attributes"); }
-        const plain_p = simplify_p(no_br_near_p);
+        const plain_p = simplify_p(cur_par);
         if (mode_debug && plain_p === "") { print("Empty result"); }
+        cur_par = plain_p;
     }
 
     if (mode_br_to_close_p) {
         if (mode_debug) { print("Splitting paragraphs at <br> tags"); }
-        const all_p = br_to_close_p(plain_p);
+        const all_p = br_to_close_p(cur_par);
         if (mode_debug && all_p === "") { print("Empty result"); }
+        cur_par = all_p;
     }
 
     if (mode_del_spaces_before_p) {
         if (mode_debug) { print("Dedenting <p> tags"); }
-        const left_p = del_spaces_before_p(all_p);
+        const left_p = del_spaces_before_p(cur_par);
         if (mode_debug && left_p === "") { print("Empty result"); }
+        cur_par = left_p;
     }
 
     if (mode_debug) { print("Finishing cleaning..."); }
-    const result = left_p;
+    const result = cur_par;
     return result;
 }
 
