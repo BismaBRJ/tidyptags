@@ -6,7 +6,7 @@ document.getElementById("chk_debug")
 
 function set_debug(event) {
     const mode = event.target.checked;
-    debug_mode = mode;
+    mode_debug = mode;
 }
 
 document.getElementById("btn_cleanup")
@@ -15,7 +15,7 @@ document.getElementById("btn_cleanup")
 function cleanup_par() {
     const source_par = document.getElementById("box_input").value;
     const clean_par = get_clean_par(source_par);
-    if (debug_mode && clean_par === "") { print("Result box empty"); }
+    if (mode_debug && clean_par === "") { print("Result box empty"); }
     document.getElementById("box_result").value = clean_par;
 }
 
@@ -40,31 +40,31 @@ function clear_all() {
 
 // using functions defined in tidy.js
 function get_clean_par(source_par) {
-    if (debug_mode) { print("Removing nbsp"); }
+    if (mode_debug) { print("Removing nbsp"); }
     const no_nbsp = del_nbsp(source_par);
-    if (debug_mode && no_nbsp === "") { print("Empty result"); }
+    if (mode_debug && no_nbsp === "") { print("Empty result"); }
 
-    if (debug_mode) { print("Deduplicating <br> tags"); }
+    if (mode_debug) { print("Deduplicating <br> tags"); }
     const single_br = dedup_br(no_nbsp);
-    if (debug_mode && single_br === "") { print("Empty result"); }
+    if (mode_debug && single_br === "") { print("Empty result"); }
 
-    if (debug_mode) { print("Deleting <br> tags near <p> tags"); }
+    if (mode_debug) { print("Deleting <br> tags near <p> tags"); }
     const no_br_near_p = del_br_near_p(single_br);
-    if (debug_mode && no_br_near_p === "") { print("Empty result"); }
+    if (mode_debug && no_br_near_p === "") { print("Empty result"); }
     
-    if (debug_mode) { print("Removing <p> tag attributes"); }
+    if (mode_debug) { print("Removing <p> tag attributes"); }
     const plain_p = simplify_p(no_br_near_p);
-    if (debug_mode && plain_p === "") { print("Empty result"); }
+    if (mode_debug && plain_p === "") { print("Empty result"); }
 
-    if (debug_mode) { print("Splitting paragraphs at <br> tags"); }
+    if (mode_debug) { print("Splitting paragraphs at <br> tags"); }
     const all_p = br_to_close_p(plain_p);
-    if (debug_mode && all_p === "") { print("Empty result"); }
+    if (mode_debug && all_p === "") { print("Empty result"); }
 
-    if (debug_mode) { print("Dedenting <p> tags"); }
+    if (mode_debug) { print("Dedenting <p> tags"); }
     const left_p = del_spaces_before_p(all_p);
-    if (debug_mode && left_p === "") { print("Empty result"); }
+    if (mode_debug && left_p === "") { print("Empty result"); }
 
-    if (debug_mode) { print("Finishing cleaning..."); }
+    if (mode_debug) { print("Finishing cleaning..."); }
     const result = left_p;
     return result;
 }
