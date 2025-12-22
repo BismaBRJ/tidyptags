@@ -1,3 +1,5 @@
+// Copyright (c) 2025 BismaBRJ (https://www.github.com/BismaBRJ/)
+
 // settings: togglable "modes"
 let mode_debug = false;
 let mode_del_nbsp = true;

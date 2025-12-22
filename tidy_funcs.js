@@ -1,3 +1,5 @@
+// Copyright (c) 2025 BismaBRJ (https://www.github.com/BismaBRJ/)
+
 // delete all occurences of "&nbsp;"
 function del_nbsp(par) {
     let new_par = par;

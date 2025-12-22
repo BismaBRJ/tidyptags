@@ -1,3 +1,5 @@
+// Copyright (c) 2025 BismaBRJ (https://www.github.com/BismaBRJ/)
+
 // code for the checkboxes
 
 document.getElementById("chk_debug")
