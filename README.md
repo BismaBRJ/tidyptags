@@ -1,6 +1,6 @@
 # Tidy `<p>` tags
 
-Copyright (c) 2025 BismaBRJ (https://www.github.com/BismaBRJ/)
+Copyright (c) 2025 Bisma Rohpanca Joyosumarto - BismaBRJ (https://www.github.com/BismaBRJ/)
 
 This is a simple utility to "tidy" HTML text pasted into the given input box, especially `<p>` tags, as a static webpage.
 

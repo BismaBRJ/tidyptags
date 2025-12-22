@@ -1,4 +1,4 @@
-// Copyright (c) 2025 BismaBRJ (https://www.github.com/BismaBRJ/)
+// Copyright (c) 2025 Bisma Rohpanca Joyosumarto - BismaBRJ (https://www.github.com/BismaBRJ/)
 
 // settings: togglable "modes"
 let mode_debug = false;
